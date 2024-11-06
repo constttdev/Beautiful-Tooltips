@@ -18,7 +18,7 @@ import java.util.Objects;
 public class ToolTipMixin {
     @Inject(method = "appendTooltip", at = @At("TAIL"))
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type, CallbackInfo ci) {
-        tooltip = tooltip.size() > 1 ? tooltip.subList(1, tooltip.size()) : tooltip;
+        tooltip.add(Text.literal(" "));
         if(stack.isDamageable()) {
             int currentDmg = stack.getMaxDamage() - stack.getDamage();
             tooltip.add(Text.literal("⚔ ᴅᴜʀᴀʙʟɪᴛʏ - "+currentDmg+"/"+stack.getMaxDamage()));
