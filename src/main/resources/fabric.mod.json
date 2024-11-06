@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "beautiful_tooltips",
+  "version": "${version}",
+  "name": "Beautiful Tooltips",
+  "description": "Makes Item Tooltips look better",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/beautiful_tooltips/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "de.constt.beautiful_tooltips.client.Beautiful_tooltipsClient"
+    ],
+    "main": [
+      "de.constt.beautiful_tooltips.Beautiful_tooltips"
+    ]
+  },
+  "mixins": [
+    "beautiful_tooltips.mixins.json",
+    {
+      "config": "beautiful_tooltips.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
